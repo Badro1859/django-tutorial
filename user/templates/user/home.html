@@ -1,0 +1,10 @@
+{% extends 'user/base.html' %}
+
+{% block content %}
+
+<main>
+    <h2>Welcom to my django tutorial: <strong>AUTHENTICATION AND AUTHORIZATION</strong> build-in system</h2>
+    <a href="{% url 'user:login' %}">login</a>
+</main>
+
+{% endblock content %}

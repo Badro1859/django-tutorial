@@ -1,0 +1,17 @@
+{% extends 'user/base.html' %}
+
+{% block content %}
+
+<h3>Update your informations</h3>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="save">
+    </form>
+</div>
+<div>
+    <h2><a href="{% url 'user:reset-pass'%}">reset password</a></h2>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'user/base.html' %}
+
+
+{% block content %}
+
+<main>
+    <h2>LOGIN PAGE</h2>
+</main>
+
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="id_username">Username:</label>
+            <input type="text" name="username" autofocus maxlength="150" required>
+        </div>
+        
+        <div>
+            <label for="id_password">Password:</label>
+            <input type="password" name="password" required>
+        </div>
+
+        {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        <input type="submit" value="login" />
+
+        <h5>you have not an account : <a href="{% url 'user:register' %}">signup</a></h5>
+    </form>
+</div>
+
+{% endblock content %}

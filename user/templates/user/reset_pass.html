@@ -1,0 +1,18 @@
+{% extends 'user/base.html' %}
+
+
+{% block content %}
+
+<main>
+    <h2>RESET PASSWORD PAGE</h2>
+</main>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="save">
+    </form>
+</div>
+
+
+{% endblock content %}
